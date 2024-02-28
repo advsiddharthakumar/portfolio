@@ -1,0 +1,203 @@
+{% extends "base.html" %}
+
+
+
+
+ {% block content %} 
+
+ {% load static %}
+ <link rel="stylesheet" href={% static "css/style.css" %}>
+ <!-- Responsive stylesheet -->
+ <link rel="stylesheet" href={% static "css/responsive.css" %}>
+
+ <section class="breadcrumb-area" style="background-image: url({% static "images/resources/breadcrumb-bg.jpg" %});">
+	<div class="container">
+	    <div class="row">
+	        <div class="col-md-12">
+	            <div class="breadcrumbs">
+	                <h1>Contact Us</h1>
+	            </div>
+	        </div>
+	    </div>            
+	</div>
+	<div class="breadcrumb-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="inner-content">
+                        <div class="left pull-left">
+                            <ul>
+                                <li><a href="/">Home</a></li>
+                                <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                                <li class="active">Contact Us</li>
+                            </ul>
+                        </div>
+                        <div class="right pull-right">
+                            <a href="#">
+                                <span></span> 
+                            </a>   
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb area-->
+
+<!--Start contact info area-->
+<section class="contact-info-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="contact-author-info contact-info">
+                    <div class="img-holder">
+                        <img src= {% static "images/resources/contact-img.jpg" %} alt="Awesome Image">
+                    </div>
+                    <div class="contact-carousel owl-nav-style-one">
+                       
+                        <!--Start single info box-->
+                        <div class="single-info-box">
+                            <div class="title">
+                                <h3>Corporate Office</h3>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="icon-holder">
+                                        <span class="flaticon-signs-1"></span>
+                                    </div>
+                                    <div class="text-holder">
+                                        <p><span>Address:</span> Skyvilla, Gera
+                                            <br>Kharadi,<br> Pune.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon-holder">
+                                        <span class="flaticon-technology-1"></span>
+                                    </div>
+                                    <div class="text-holder">
+                                        <p><span>Call Us:</span><br> +91 9835592257</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon-holder">
+                                        <span class="flaticon-multimedia"></span>
+                                    </div>
+                                    <div class="text-holder">
+                                        <p><span>Mail Us:</span><br> advsiddharthakumar@yahoo.com</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            {% comment %} <ul class="social-icon">
+                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+                            </ul> {% endcomment %}
+                        </div>
+                        <!--Start single info box-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12">
+                <div class="contact-form">
+                    <div class="sec-title text-center">
+                        <span></span>
+                        <div class="border center"></div> 
+                        <h1>Message Us</h1>
+                    </div>
+                    <form id="contact-form" name="contact" class="default-form" action="/contact" method="post">
+                         {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" name="name" value="" placeholder="Your Name*" required="">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" name="email" value="" placeholder="Your Mail*" required="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" name="phone" value="" placeholder="Phone">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="subject" value="" placeholder="Subject">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <textarea name="message" placeholder="Your Message.." required=""></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
+                                <button class="thm-btn bg-1" type="submit" data-loading-text="Please wait...">send message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</section>
+
+
+
+
+<script src={% static "js/jquery.js" %}></script>
+<!-- Wow Script -->
+<script src={% static "js/wow.min.js" %}></script>
+<!-- bootstrap -->
+<script src={% static "js/bootstrap.min.js" %}></script>
+<!-- bx slider -->
+<script src={% static "js/jquery.bxslider.min.js" %}></script>
+<!-- count to -->
+<script src={% static "js/jquery.countTo.js" %}></script>
+<!-- owl carousel -->
+<script src={% static "js/owl.carousel.min.js" %}></script>
+<!-- validate -->
+<script src={% static "js/validation.js" %}></script>
+<!-- mixit up -->
+<script src={% static "js/jquery.mixitup.min.js" %}></script>
+<!-- easing -->
+<script src={% static "js/jquery.easing.min.js" %}></script>
+<!-- gmap helper -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHzPSV2jshbjI8fqnC_C4L08ffnj5EN3A"></script>
+<!--gmap script-->
+<script src={% static "js/gmaps.js" %}></script>
+<script src={% static "js/map-helper.js" %}></script>
+
+
+
+
+
+
+<script src={% static "js/jquery.fitvids.js" %}></script>
+<!-- jQuery ui js -->
+<script src={% static "assets/jquery-ui-1.11.4/jquery-ui.js" %}></script>
+<!-- Language Switche  -->
+<script src={% static "assets/language-switcher/jquery.polyglot.language.switcher.js" %}></script>
+<!-- fancy box -->
+<script src={% static "js/jquery.fancybox.pack.js" %}></script>
+<script src={% static "js/jquery.appear.js" %}></script>
+<!-- isotope script-->
+<script src={% static "js/isotope.js" %}></script>
+<script src={% static "js/jquery.prettyPhoto.js" %}></script> 
+<!-- jQuery timepicker js -->
+<script src={% static "assets/timepicker/timePicker.js" %}></script>
+<!-- Bootstrap select picker js -->
+<script src= {% static "assets/bootstrap-sl-1.12.1/bootstrap-select.js" %}></script>                               
+<script src={% static "assets/html5lightbox/html5lightbox.js" %}></script>
+
+<script src={% static "js/chart.js" %}></script>
+<script src={% static "js/graph.js" %}></script>
+
+
+{% endblock %}
+
+</body>
+</html>
